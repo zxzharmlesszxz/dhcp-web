@@ -8,12 +8,21 @@ namespace Module\Subnet;
  */
 class Model extends \Core\Model
 {
-    protected $class;
-
-    public function __construct()
+    /**
+     * @param array $items
+     * @return array
+     */
+    protected function ajax(array $items)
     {
-        parent::__construct();
-        $this->class = new Subnet();
+        $content = array();
+        foreach ($items as $item) {
+            $content['data'][] = array('id' => $item->id, 'serverName' => $item->servername, 'address' => $item->addr,
+                'steam' => $item->steam, 'players' => $item->players, 'botNumber' => $item->botNumber, 'maxPlayers' => $item->maxplayers,
+                'map' => $item->map, 'game' => $item->game, 'mode' => $item->mode, 'location' => $item->location,
+                'regDate' => $item->regdate, 'site' => $item->site, 'status' => $item->status, 'vip' => $item->vip,
+                'top' => $item->top);
+        }
+        return $content;
     }
 
     /**

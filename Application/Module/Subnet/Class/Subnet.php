@@ -17,7 +17,8 @@ class Subnet extends DatabaseObject
     /**
      * @var array
      */
-    protected static $db_fields = array('subnet_id', 'dhcp_lease_time', 'dhcp_renewal', 'dhcp_rebind_time', 'mask', 'gateway', 'dns1', 'dns2', 'domain', 'vlan_id', 'type');
+    protected static $db_fields = array('subnet_id', 'dhcp_lease_time', 'dhcp_renewal', 'dhcp_rebind_time', 'mask',
+        'gateway', 'dns1', 'dns2', 'domain', 'vlan_id', 'type');
     /**
      * @var
      */
