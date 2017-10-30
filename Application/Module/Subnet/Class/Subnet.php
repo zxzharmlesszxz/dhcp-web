@@ -6,7 +6,7 @@ namespace Module\Subnet;
  * Class Subnet
  * @package Module\Subnet
  */
-class Subnet
+class Subnet extends \Core\Module\Database\DatabaseObject
 {
     /**
      * Example constructor.
