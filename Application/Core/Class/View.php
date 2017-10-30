@@ -43,6 +43,7 @@ class View implements ViewInterface
         $menu->Controller->add('main', '/', 'Main', 'Main');
         $menu->Controller->add('servers', '/server', 'Servers', 'Servers');
         $menu->Controller->add('contacts', '/contact', 'Contacts', 'Contacts');
+        $menu->Controller->add('subnets', '/subnet', 'Subnets', 'Subnets');
 
         if (Core::getInstance()->Session->get('type') == 'admin') {
             $menu->Controller->add('admins', '/admin', 'Admins', 'Admins');
