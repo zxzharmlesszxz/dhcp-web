@@ -16,8 +16,17 @@ class Model extends \Core\Model
         $this->class = new Subnet();
     }
 
+    /**
+     * @return array|mixed|string
+     */
     public function get()
     {
-        return $this->class->display();
+        $query = func_get_arg(0)->getQuery();
+        $template = file_get_contents(__DIR__ . '/../View/subnets_view.php');
+        if (isset($query['ajax']) and $query['ajax'] == true) {
+            return $this->ajax(Subnet::find_all());
+        } else {
+            return str_replace('%content%', $this->str(Subnet::find_all()), $template);
+        }
     }
 }
