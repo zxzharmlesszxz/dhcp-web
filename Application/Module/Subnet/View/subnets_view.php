@@ -10,10 +10,10 @@
     <input type="number" value="" placeholder="dhcp_lease_time" name="subnet[dhcp_lease_time]"/>
     <input type="number" value="" placeholder="dhcp_renewal" name="subnet[dhcp_renewal]"/>
     <input type="number" value="" placeholder="dhcp_rebind_time" name="subnet[dhcp_rebind_time]"/>
-    <button class="create" title="Create" alt="Create" data-type="subnet"</button>
+    <button class="create" title="Create" data-type="subnet">Create</button>
 </p>
 <p>
-    <button alt="Add new Subnet" title="Add new Subnet" id="show">Add new Subnet</button>
+    <button title="Add new Subnet" id="show">Add new Subnet</button>
 </p>
 <script type="text/javascript">
     $(document).ready(function () {
@@ -62,7 +62,6 @@
         });
     });
 </script>
-<p>
 <table id='table' class='display'>
     <thead>
     <tr>
@@ -98,4 +97,3 @@
     </tr>
     </tfoot>
 </table>
-</p>
