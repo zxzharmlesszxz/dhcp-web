@@ -46,8 +46,16 @@ class Model extends \Core\Model
         $template = file_get_contents(__DIR__ . '/../View/subnets_view.php');
         if (isset($query['ajax']) and $query['ajax'] == true) {
             return $this->ajax(Subnet::find_all());
+        } elseif (isset($query['id'])) {
+            return $this->show(Subnet::find_by_id(intval($query['id'])));
         } else {
             return str_replace('%content%', $this->str(Subnet::find_all()), $template);
         }
+    }
+
+    protected function show(Subnet $subnet)
+    {
+        $template = file_get_contents(__DIR__ . '/../View/subnet_show.php');
+        return str_replace('%content%', $subnet, $template);
     }
 }
