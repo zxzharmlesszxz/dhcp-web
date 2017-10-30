@@ -16,11 +16,10 @@ class Model extends \Core\Model
     {
         $content = array();
         foreach ($items as $item) {
-            $content['data'][] = array('id' => $item->id, 'serverName' => $item->servername, 'address' => $item->addr,
-                'steam' => $item->steam, 'players' => $item->players, 'botNumber' => $item->botNumber, 'maxPlayers' => $item->maxplayers,
-                'map' => $item->map, 'game' => $item->game, 'mode' => $item->mode, 'location' => $item->location,
-                'regDate' => $item->regdate, 'site' => $item->site, 'status' => $item->status, 'vip' => $item->vip,
-                'top' => $item->top);
+            $content['data'][] = array('id' => $item->id, 'domain' => $item->domain, 'gateway' => $item->gateway,
+                'type' => $item->type, 'vlan_id' => $item->vlan_id, 'mask' => $item->mask, 'dns1' => $item->dns1,
+                'dns2' => $item->dns2, 'dhcp_lease_time' => $item->dhcp_lease_time, 'dhcp_renewal' => $item->dhcp_renewal,
+                'dhcp_rebind_time' => $item->dhcp_rebind_time);
         }
         return $content;
     }
@@ -33,7 +32,7 @@ class Model extends \Core\Model
     {
         $content = "";
         foreach ($items as $item) {
-            $content .= "<tr><td>$item->login</td><td>$item->username</td><td>$item->email</td><td>$item->status</td></tr>\n";
+            $content .= "<tr><td>$item->id</td><td>$item->domain</td><td>$item->gateway</td><td>$item->vlan_id</td></tr>\n";
         }
         return $content;
     }

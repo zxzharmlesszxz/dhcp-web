@@ -53,10 +53,10 @@
 <table id='table' class='display'>
     <thead>
     <tr>
-        <th>Login</th>
-        <th>Username</th>
-        <th>Email</th>
-        <th>Status</th>
+        <th>Subnet</th>
+        <th>Domain</th>
+        <th>Gateway</th>
+        <th>VlanID</th>
     </tr>
     </thead>
     <tbody>
@@ -64,10 +64,10 @@
     </tbody>
     <tfoot>
     <tr>
-        <th>Login</th>
-        <th>Username</th>
-        <th>Email</th>
-        <th>Status</th>
+        <th>Subnet</th>
+        <th>Domain</th>
+        <th>Gateway</th>
+        <th>VlanID</th>
     </tr>
     </tfoot>
 </table>
