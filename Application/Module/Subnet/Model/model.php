@@ -17,6 +17,19 @@ class Model extends \Core\Model
     }
 
     /**
+     * @param array $items
+     * @return string
+     */
+    protected function str(array $items)
+    {
+        $content = "";
+        foreach ($items as $item) {
+            $content .= "<tr><td>$item->login</td><td>$item->username</td><td>$item->email</td><td>$item->status</td></tr>\n";
+        }
+        return $content;
+    }
+
+    /**
      * @return array|mixed|string
      */
     public function get()
