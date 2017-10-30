@@ -44,7 +44,9 @@
                 {"data": "subnet"},
                 {"data": "domain"},
                 {"data": "gateway"},
-                {"data": "vlan_id"}
+                {"data": "mask"},
+                {"data": "vlan_id"},
+                {"data": "type"}
             ]
         });
     });
@@ -56,7 +58,9 @@
         <th>Subnet</th>
         <th>Domain</th>
         <th>Gateway</th>
+        <th>Mask</th>
         <th>VlanID</th>
+        <th>Type</th>
     </tr>
     </thead>
     <tbody>
@@ -67,7 +71,9 @@
         <th>Subnet</th>
         <th>Domain</th>
         <th>Gateway</th>
+        <th>Mask</th>
         <th>VlanID</th>
+        <th>Type</th>
     </tr>
     </tfoot>
 </table>
