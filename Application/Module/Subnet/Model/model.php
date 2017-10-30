@@ -56,6 +56,6 @@ class Model extends \Core\Model
     protected function show(Subnet $subnet)
     {
         $template = file_get_contents(__DIR__ . '/../View/subnet_show.php');
-        return str_replace('%content%', $subnet, $template);
+        return str_replace('%content%', $subnet->domain . $subnet->gateway, $template);
     }
 }
