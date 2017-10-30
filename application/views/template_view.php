@@ -4,7 +4,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <meta name="description" content="" />
   <meta name="keywords" content="" />
-  <title><?php echo $config['PROJECT_NAME']; ?></title>
+  <title>DHCP Administrate Tool</title>
   <link rel="stylesheet" type="text/css" href="/css/jquery.dataTables.min.css" />
   <link rel="stylesheet/less" type="text/css" href="/less/style.less">
   <script type="text/javascript" src="/js/jquery-2.1.3.min.js"></script>
@@ -16,7 +16,7 @@
  <body>
   <header id="header">
    <div id="logo">
-    <a href="/"><?php echo $config['PROJECT_NAME']; ?></a>
+    <a href="/">DHCP Administrate Tool</a>
    </div>
    <nav id="menu">
     <menu>
