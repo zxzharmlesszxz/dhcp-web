@@ -13,16 +13,16 @@ class Subnet extends DatabaseObject
     /**
      * @var string
      */
-    protected static $table_name = "subnets";
+    protected static $table_name = "subnet";
     /**
      * @var array
      */
-    protected static $db_fields = array('subnet_id', 'dhcp_lease_time', 'dhcp_renewal', 'dhcp_rebind_time', 'mask',
+    protected static $db_fields = array('id', 'dhcp_lease_time', 'dhcp_renewal', 'dhcp_rebind_time', 'mask',
         'gateway', 'dns1', 'dns2', 'domain', 'vlan_id', 'type');
     /**
      * @var
      */
-    protected $subnet_id;
+    protected $id;
     /**
      * @var
      */
