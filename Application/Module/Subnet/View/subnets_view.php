@@ -10,7 +10,7 @@
     <input type="number" value="" placeholder="dhcp_lease_time" name="subnet[dhcp_lease_time]"/>
     <input type="number" value="" placeholder="dhcp_renewal" name="subnet[dhcp_renewal]"/>
     <input type="number" value="" placeholder="dhcp_rebind_time" name="subnet[dhcp_rebind_time]"/>
-    <button class="create" title="Create" alt="Create" data-type="subnet"te</button>
+    <button class="create" title="Create" alt="Create" data-type="subnet"</button>
 </p>
 <p>
     <button alt="Add new Subnet" title="Add new Subnet" id="show">Add new Subnet</button>
