@@ -22,7 +22,7 @@
     <menu>
      <li><a href="/">Main</a></li>
      <li><a href="/admins">Admins</a></li>
-     <li><a href="/groups">Groups</a></li>
+     <li><a href="/subnets">Subnets</a></li>
      <li><a href="/users">Users</a></li>
      <li><a href="/quotalimits">Quota Limits</a></li>
      <li><a href="/quotatallies">Quota tallies</a></li>
