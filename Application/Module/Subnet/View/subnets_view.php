@@ -1,10 +1,16 @@
 <h1>Subnets</h1>
 <p class="form hide">
-    <input type="text" value="" placeholder="login" name="admin[login]"/>
-    <input type="password" value="" placeholder="password" name="admin[password]"/>
-    <input type="text" value="" placeholder="username" name="admin[username]"/>
-    <input type="text" value="" placeholder="email" name="admin[email]"/>
-    <button class="create" title="Create" alt="Create" data-type="admin">Create</button>
+    <input type="text" value="" placeholder="gateway" name="subnet[gateway]"/>
+    <input type="text" value="" placeholder="mask" name="subnet[mask]"/>
+    <input type="text" value="" placeholder="domain" name="subnet[domain]"/>
+    <input type="number" value="" placeholder="vlan_id" name="subnet[vlan_id]"/>
+    <input type="text" value="" placeholder="type" name="subnet[type]"/>
+    <input type="text" value="" placeholder="dns1" name="subnet[dns1]"/>
+    <input type="text" value="" placeholder="dns2" name="subnet[dns2]"/>
+    <input type="number" value="" placeholder="dhcp_lease_time" name="subnet[dhcp_lease_time]"/>
+    <input type="number" value="" placeholder="dhcp_renewal" name="subnet[dhcp_renewal]"/>
+    <input type="number" value="" placeholder="dhcp_rebind_time" name="subnet[dhcp_rebind_time]"/>
+    <button class="create" title="Create" alt="Create" data-type="subnet"te</button>
 </p>
 <p>
     <button alt="Add new Subnet" title="Add new Subnet" id="show">Add new Subnet</button>
@@ -42,11 +48,16 @@
             },
             "columns": [
                 {"data": "subnet"},
-                {"data": "domain"},
                 {"data": "gateway"},
                 {"data": "mask"},
+                {"data": "domain"},
                 {"data": "vlan_id"},
-                {"data": "type"}
+                {"data": "type"},
+                {"data": "dns1"},
+                {"data": "dns2"},
+                {"data": "dhcp_lease_time"},
+                {"data": "dhcp_renewal"},
+                {"data": "dhcp_rebind_time"}
             ]
         });
     });
@@ -56,11 +67,16 @@
     <thead>
     <tr>
         <th>Subnet</th>
-        <th>Domain</th>
         <th>Gateway</th>
         <th>Mask</th>
+        <th>Domain</th>
         <th>VlanID</th>
         <th>Type</th>
+        <th>DNS 1</th>
+        <th>DNS 2</th>
+        <th>DHCP lease time</th>
+        <th>DHCP renewal</th>
+        <th>DHCP rebind time</th>
     </tr>
     </thead>
     <tbody>
@@ -69,11 +85,16 @@
     <tfoot>
     <tr>
         <th>Subnet</th>
-        <th>Domain</th>
         <th>Gateway</th>
         <th>Mask</th>
+        <th>Domain</th>
         <th>VlanID</th>
         <th>Type</th>
+        <th>DNS 1</th>
+        <th>DNS 2</th>
+        <th>DHCP lease time</th>
+        <th>DHCP renewal</th>
+        <th>DHCP rebind time</th>
     </tr>
     </tfoot>
 </table>
