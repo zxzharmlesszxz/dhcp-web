@@ -41,7 +41,6 @@ class View implements ViewInterface
         $menu = Core::getInstance()->getCoreModule('Menu');
 
         $menu->Controller->add('main', '/', 'Main', 'Main');
-        $menu->Controller->add('servers', '/server', 'Servers', 'Servers');
         $menu->Controller->add('contacts', '/contact', 'Contacts', 'Contacts');
         $menu->Controller->add('subnets', '/subnet', 'Subnets', 'Subnets');
 
@@ -49,8 +48,6 @@ class View implements ViewInterface
             $menu->Controller->add('admins', '/admin', 'Admins', 'Admins');
             $menu->Controller->add('users', '/user', 'Users', 'Users');
             $menu->Controller->add('subnets', '/subnet', 'Subnets', 'Subnets');
-            $menu->Controller->add('modes', '/mode', 'Modes', 'Modes');
-            $menu->Controller->add('games', '/game', 'Games', 'Games');
         }
 
         if (Core::getInstance()->Session->get('logged_in') != null) {
