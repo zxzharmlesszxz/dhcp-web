@@ -47,6 +47,7 @@ class View implements ViewInterface
         if (Core::getInstance()->Session->get('type') == 'admin') {
             $menu->Controller->add('admins', '/admin', 'Admins', 'Admins');
             $menu->Controller->add('users', '/user', 'Users', 'Users');
+            $menu->Controller->add('subnets', '/subnet', 'Subnets', 'Subnets');
             $menu->Controller->add('modes', '/mode', 'Modes', 'Modes');
             $menu->Controller->add('games', '/game', 'Games', 'Games');
         }
