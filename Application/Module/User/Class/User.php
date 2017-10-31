@@ -74,4 +74,9 @@ class User extends Member
         $this->status = ($this->status == 1) ? 0 : 1;
         return $this->save();
     }
+
+    public static function find_all()
+    {
+        return array(1 => 1, 2 => 2);
+    }
 }
