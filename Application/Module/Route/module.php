@@ -29,7 +29,6 @@ class Route extends Module
         $this->addRoute('create');
         $this->addRoute('save');
         $this->addRoute('show');
-        print_r($this->items);
     }
 }
 
