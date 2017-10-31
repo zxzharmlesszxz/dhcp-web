@@ -28,7 +28,7 @@ class Subnet extends Module
         $this->addRoute('delete');
         $this->addRoute('create');
         $this->addRoute('save');
-        $this->addRoute('get');
+        $this->addRoute('show');
     }
 }
 

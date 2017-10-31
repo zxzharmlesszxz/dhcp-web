@@ -26,7 +26,7 @@
                     for (var i = 0; i < json.data.length; i++) {
                         var item = json.data[i];
                         return_data.push({
-                            'subnet': '<a href="/subnet/get/?id=' + item.id + '">' + item.id + '</a>' +
+                            'subnet': '<a href="/subnet/show/?id=' + item.id + '">' + item.id + '</a>' +
                             '<span class="actions">' +
                             '<button class="delete" title="Delete" data-id="' + item.id + '" data-type="subnet"></button>' +
                             '<button class="edit" title="Edit" onclick="location.href=\'/subnet/edit/?id=' + item.id + '\'"></button>' +
