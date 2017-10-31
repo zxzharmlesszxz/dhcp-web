@@ -30,7 +30,6 @@ class Model extends \Core\Model
      */
     protected function str(Subnet $subnet)
     {
-        var_dump($subnet);
         return "<tr>$subnet->id</td><td>$subnet->domain</td><td>$subnet->gateway</td><td>$subnet->vlan_id</td></tr>\n";
     }
 
