@@ -44,7 +44,10 @@ class Model extends \Core\Model
         } elseif (isset($query['id'])) {
             $subnet = Subnet::find_by_id(intval($query['id']));
             $data = $this->str($subnet);
-            $routes = SubnetRoute::find_by_scope(array('subnet_id' => $subnet->id));
+            $routes = '';
+            foreach (SubnetRoute::find_by_scope(array('subnet_id' => $subnet->id)) as $route) {
+                $routes .= print $route;
+            }
             $template = file_get_contents(__DIR__ . '/../View/subnet_show.php');
             $template = str_replace('%routes%', $routes, $template);
         } else {
