@@ -33,7 +33,7 @@ abstract class Module implements ModuleInterface
         $this->Controller = new $controller(new $model);
         $this->addRoute('get');
         $this->items = new Collection();
-        foreach ((get_called_class() . '\\' . get_called_class())::find_all() as $item) {
+        foreach ((get_called_class() . '\\' . explode('\\', get_called_class())[1])::find_all() as $item) {
             $this->items->addItem($item);
         }
     }
