@@ -15,6 +15,6 @@ class Contact extends DatabaseObject
 {
     public static function find_all()
     {
-        return true;
+        return array(1 => 1, 2 => 2);
     }
 }

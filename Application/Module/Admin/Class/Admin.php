@@ -73,4 +73,9 @@ class Admin extends Member
     {
         $this->password = md5(trim($password));
     }
+
+    public static function find_all()
+    {
+        return array(1 => 1, 2 => 2);
+    }
 }
