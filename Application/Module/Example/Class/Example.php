@@ -23,4 +23,9 @@ class Example
     {
         return file_get_contents(__DIR__ . "/../View/main.php");
     }
+
+    public static function find_all()
+    {
+        return array(1 => 1, 2 => 2);
+    }
 }
