@@ -4,8 +4,7 @@
 * DHCP web Project Configuration file
 **/
 
-$config = array(
-
+return [
  'PROJECT_NAME' => 'DHCP web',
  'PROJECT_VERSION' => '0.0.1',
  'PROJECT_ROOT' => dirname(__DIR__, 2),
@@ -24,4 +23,4 @@ $config = array(
   'password' => 'dhcp',
   'charset' => 'utf8',
   ),
-);
+]

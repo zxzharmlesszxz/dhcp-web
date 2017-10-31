@@ -70,7 +70,6 @@ final class Config implements SingletonInterface
      */
     private function loadConfigFile()
     {
-        include_once(__DIR__ . '/../../config/config.inc.php');
-        $this->_configuration = $config;
+        $this->_configuration = include_once(__DIR__ . '/../../config/config.inc.php');
     }
 }
