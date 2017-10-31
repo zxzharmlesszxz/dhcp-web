@@ -40,6 +40,7 @@ class Model extends \Core\Model
             $data = Route::find_by_id(intval($query['id']));
             $template = file_get_contents(__DIR__ . '/../View/route_show.php');
         } elseif (isset($query)) {
+            array_shift($query);
             $data = Route::find_by_scope($query);
         } else {
             $template = file_get_contents(__DIR__ . '/../View/routes_view.php');
