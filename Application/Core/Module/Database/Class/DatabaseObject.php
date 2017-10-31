@@ -40,7 +40,7 @@ abstract class DatabaseObject
     public static function find_by_id($id = 0)
     {
         $result_array = self::find_by_sql("SELECT * FROM " . static::$table_name . " WHERE `id` = " . db()->escape_value($id) . " LIMIT 1");
-        return !empty($result_array) ? $result_array[0] : false;
+        return !empty($result_array) ? $result_array : false;
     }
 
     /**

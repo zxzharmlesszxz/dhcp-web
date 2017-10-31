@@ -37,10 +37,10 @@ class Model extends \Core\Model
     {
         $query = func_get_arg(0)->getQuery();
         if (isset($query['id'])) {
-            $data[] = Route::find_by_id(intval($query['id']));
+            $data = Route::find_by_id(intval($query['id']));
             //$template = file_get_contents(__DIR__ . '/../View/route_show.php');
         } elseif (isset($query['subnet_id'])) {
-            $data[] = Route::find_by_scope(array('subnet_id' => intval($query['subnet_id'])));
+            $data = Route::find_by_scope(array('subnet_id' => intval($query['subnet_id'])));
         } else {
             //$template = file_get_contents(__DIR__ . '/../View/routes_view.php');
             $data = Route::find_all();
