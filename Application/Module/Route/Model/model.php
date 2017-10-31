@@ -37,7 +37,7 @@ class Model extends \Core\Model
     {
         $query = func_get_arg(0)->getQuery();
         if (isset($query['id'])) {
-            $data = Route::find_by_id(intval($query['id']));
+            $data[] = Route::find_by_id(intval($query['id']));
             $template = file_get_contents(__DIR__ . '/../View/route_show.php');
         } else {
             $template = file_get_contents(__DIR__ . '/../View/routes_view.php');
