@@ -46,7 +46,7 @@ class Model extends \Core\Model
             $data = $this->str($subnet);
             $routes = '';
             foreach (SubnetRoute::find_by_scope(array('subnet_id' => $subnet->id)) as $route) {
-                $routes .= print $route;
+                $routes .= $route->id . $route->destination . $route->gateway . $route->mask;
             }
             $template = file_get_contents(__DIR__ . '/../View/subnet_show.php');
             $template = str_replace('%routes%', $routes, $template);
