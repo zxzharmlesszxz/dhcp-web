@@ -1,6 +1,7 @@
 <?php
 
 namespace Module\SubnetRoute;
+use function PHPSTORM_META\elementType;
 
 /**
  * Class Model
@@ -36,18 +37,26 @@ class Model extends \Core\Model
     public function get()
     {
         $query = func_get_arg(0)->getQuery();
-        if (isset($query['ajax']) and $query['ajax'] == true) {
-            return $this->ajax(SubnetRoute::find_all());
-        } elseif (isset($query['id'])) {
-            $data = $this->str(SubnetRoute::find_by_id(intval($query['id'])));
+        if (isset($query['id'])) {
+            $data = SubnetRoute::find_by_id(intval($query['id']));
             $template = file_get_contents(__DIR__ . '/../View/route_show.php');
         } else {
             $template = file_get_contents(__DIR__ . '/../View/routes_view.php');
-            $data = '';
-            foreach (SubnetRoute::find_all() as $route) {
-                $data .= $this->str($route);
-            }
+            $data = SubnetRoute::find_all();
         }
-        return str_replace('%content%', $data, $template);
+        if (isset($query['ajax']) and $query['ajax'] == true) {
+            return $this->ajax($data);
+        } else {
+            if (is_array($data)){
+                $str = '';
+                foreach ($data as $subnet) {
+                    $str .= $this->str($subnet);
+                }
+                $data = $str;
+            } else {
+                $data = $this->str($data);
+            }
+            return str_replace('%content%', $data, $template);
+        }
     }
 }

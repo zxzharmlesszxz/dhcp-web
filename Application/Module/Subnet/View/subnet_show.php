@@ -4,7 +4,7 @@
         $('#table1').DataTable({
             "processing": true,
             "ajax": {
-                "url": "/subnetRoute/get/?ajax=true",
+                "url": "/subnetRoute/get/?ajax=true&subnet_id=1",
                 "dataSrc": function (json) {
                     var return_data = [];
                     for (var i = 0; i < json.data.length; i++) {
@@ -73,7 +73,7 @@
     <thead>
     <tr>
         <th>Route</th>
-        <th>VlanID</th>
+        <th>SubnetID</th>
         <th>Gateway</th>
         <th>Destination</th>
         <th>Mask</th>
@@ -85,7 +85,7 @@
     <tfoot>
     <tr>
         <th>Route</th>
-        <th>VlanID</th>
+        <th>SubnetID</th>
         <th>Gateway</th>
         <th>Destination</th>
         <th>Mask</th>

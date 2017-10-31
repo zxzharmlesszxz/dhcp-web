@@ -39,18 +39,26 @@ class Model extends \Core\Model
     public function get()
     {
         $query = func_get_arg(0)->getQuery();
-        if (isset($query['ajax']) and $query['ajax'] == true) {
-            return $this->ajax(Subnet::find_all());
-        } elseif (isset($query['id'])) {
-            $data = $this->str(Subnet::find_by_id(intval($query['id'])));
+        if (isset($query['id'])) {
+            $data = Subnet::find_by_id(intval($query['id']));
             $template = file_get_contents(__DIR__ . '/../View/subnet_show.php');
         } else {
             $template = file_get_contents(__DIR__ . '/../View/subnets_view.php');
-            $data = '';
-            foreach (Subnet::find_all() as $subnet) {
-                $data .= $this->str($subnet);
-            }
+            $data = Subnet::find_all();
         }
-        return str_replace('%content%', $data, $template);
+        if (isset($query['ajax']) and $query['ajax'] == true) {
+            return $this->ajax($data);
+        } else {
+            if (is_array($data)){
+                $str = '';
+                foreach ($data as $subnet) {
+                    $str .= $this->str($subnet);
+                }
+                $data = $str;
+            } else {
+                $data = $this->str($data);
+            }
+            return str_replace('%content%', $data, $template);
+        }
     }
 }
