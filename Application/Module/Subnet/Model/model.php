@@ -49,7 +49,11 @@ class Model extends \Core\Model
         } elseif (isset($query['id'])) {
             return $this->str(Subnet::find_by_id(intval($query['id'])));
         } else {
-            return str_replace('%content%', $content = function(){$items = ''; foreach (Subnet::find_all() as $subnet){$items .= $this->str($subnet);} return $items;}, $template);
+            $items = '';
+            foreach (Subnet::find_all() as $subnet) {
+                $items .= $this->str($subnet);
+            }
+            return str_replace('%content%', $items, $template);
         }
     }
 }
