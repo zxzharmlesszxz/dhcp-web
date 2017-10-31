@@ -1,10 +1,10 @@
 <?php
 
-namespace Module\SubnetRoute;
+namespace Module\Route;
 
 /**
  * Class Controller
- * @package Module\SubnetRoute
+ * @package Module\Route
  */
 class Controller extends \Core\Controller
 {

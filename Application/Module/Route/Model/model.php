@@ -1,11 +1,10 @@
 <?php
 
-namespace Module\SubnetRoute;
-use function PHPSTORM_META\elementType;
+namespace Module\Route;
 
 /**
  * Class Model
- * @package Module\SubnetRoute
+ * @package Module\Route
  */
 class Model extends \Core\Model
 {
@@ -23,10 +22,10 @@ class Model extends \Core\Model
     }
 
     /**
-     * @param SubnetRoute $route
+     * @param Route $route
      * @return string
      */
-    protected function str(SubnetRoute $route)
+    protected function str(Route $route)
     {
         return "<tr><td>$route->id</td><td>$route->subnet_id</td><td>$route->gateway</td><td>$route->destination</td><td>$route->mask</td></tr>\n";
     }
@@ -38,11 +37,11 @@ class Model extends \Core\Model
     {
         $query = func_get_arg(0)->getQuery();
         if (isset($query['id'])) {
-            $data = SubnetRoute::find_by_id(intval($query['id']));
+            $data = Route::find_by_id(intval($query['id']));
             $template = file_get_contents(__DIR__ . '/../View/route_show.php');
         } else {
             $template = file_get_contents(__DIR__ . '/../View/routes_view.php');
-            $data = SubnetRoute::find_all();
+            $data = Route::find_all();
         }
         if (isset($query['ajax']) and $query['ajax'] == true) {
             return $this->ajax($data);

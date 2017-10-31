@@ -14,10 +14,10 @@ require_once 'Controller/controller.php';
 require_once 'Model/model.php';
 
 /**
- * Class SubnetRoute
+ * Class Route
  * @package Module
  */
-class SubnetRoute extends Module
+class Route extends Module
 {
     /**
      * SubnetRoute constructor.
