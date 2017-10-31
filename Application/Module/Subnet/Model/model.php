@@ -25,16 +25,13 @@ class Model extends \Core\Model
     }
 
     /**
-     * @param Subnet $items
+     * @param Subnet $subnet
      * @return string
      */
-    protected function str(Subnet $items)
+    protected function str(Subnet $subnet)
     {
-        $content = "";
-        foreach ($items as $item) {
-            $content .= "<tr><td>$item->id</td><td>$item->domain</td><td>$item->gateway</td><td>$item->vlan_id</td></tr>\n";
-        }
-        return $content;
+        var_dump($subnet);
+        return "<tr>$subnet->id</td><td>$subnet->domain</td><td>$subnet->gateway</td><td>$subnet->vlan_id</td></tr>\n";
     }
 
     /**
