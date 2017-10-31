@@ -30,7 +30,7 @@ class Model extends \Core\Model
      */
     protected function str(Subnet $subnet)
     {
-        return "<tr>$subnet->id</td><td>$subnet->gateway</td><td>$subnet->mask</td><td>$subnet->domain</td><td>$subnet->vlan_id</td><td>$subnet->type</td><td>$subnet->dns1</td><td>$subnet->dns2</td><td>$subnet->dhcp_lease_time</td><td>$subnet->dhcp_renewal</td><td>$subnet->dhcp_rebind_time</td></tr>\n";
+        return "<tr><td>$subnet->id</td><td>$subnet->gateway</td><td>$subnet->mask</td><td>$subnet->domain</td><td>$subnet->vlan_id</td><td>$subnet->type</td><td>$subnet->dns1</td><td>$subnet->dns2</td><td>$subnet->dhcp_lease_time</td><td>$subnet->dhcp_renewal</td><td>$subnet->dhcp_rebind_time</td></tr>\n";
     }
 
     /**
