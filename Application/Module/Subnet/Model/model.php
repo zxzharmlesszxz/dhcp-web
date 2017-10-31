@@ -47,7 +47,7 @@ class Model extends \Core\Model
         if (isset($query['ajax']) and $query['ajax'] == true) {
             return $this->ajax(Subnet::find_all());
         } elseif (isset($query['id'])) {
-            return $this->show(Subnet::find_by_id(intval($query['id'])));
+            return $this->str(Subnet::find_by_id(intval($query['id'])));
         } else {
             return str_replace('%content%', $this->str(Subnet::find_all()), $template);
         }
