@@ -25,10 +25,10 @@ class Model extends \Core\Model
     }
 
     /**
-     * @param array $items
+     * @param Subnet $items
      * @return string
      */
-    protected function str(array $items)
+    protected function str(Subnet $items)
     {
         $content = "";
         foreach ($items as $item) {
@@ -49,7 +49,7 @@ class Model extends \Core\Model
         } elseif (isset($query['id'])) {
             return $this->str(Subnet::find_by_id(intval($query['id'])));
         } else {
-            return str_replace('%content%', $this->str(Subnet::find_all()), $template);
+            return str_replace('%content%', $content = function(){foreach (Subnet::find_all() as $subnet){$this->str($subnet);};}, $template);
         }
     }
 }

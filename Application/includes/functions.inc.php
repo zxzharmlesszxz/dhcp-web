@@ -1,10 +1,8 @@
 <?php
 
 /**
- * @param null $servergame
- * @return string
+ * @return mixed
  */
-
 function db()
 {
     return \Core\Core::getInstance()->getCoreModule('Database')->Controller->Model->class;
