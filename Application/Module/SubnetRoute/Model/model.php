@@ -27,7 +27,7 @@ class Model extends \Core\Model
      */
     protected function str(SubnetRoute $route)
     {
-        return "<tr><td>$route->id</td><td>$route->gateway</td><td>$route->mask</td><td>$route->destination</td><td>$route->subnet_id</td></tr>\n";
+        return "<tr><td>$route->id</td><td>$route->subnet_id</td><td>$route->gateway</td><td>$route->destination</td><td>$route->mask</td></tr>\n";
     }
 
     /**
