@@ -24,6 +24,7 @@ abstract class Controller implements ControllerInterface
 
     /**
      * Controller constructor.
+     * @param Model $model
      */
     public function __construct(Model $model)
     {

@@ -20,4 +20,15 @@ interface ModuleInterface
      */
     public function addRoute(string $Action);
 
+    /**
+     * @return mixed
+     */
+    public function getItems();
+
+    /**
+     * @param array $scope
+     * @return mixed
+     */
+    public function getItem(array $scope);
+
 }
