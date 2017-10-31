@@ -57,4 +57,21 @@ abstract class Module implements ModuleInterface
     {
         return $this->Controller->action($action, $query);
     }
+
+    /**
+     * @param array $scope
+     * @return mixed|void
+     */
+    public function getItem(array $scope)
+    {
+        // TODO: Implement getItem() method.
+    }
+
+    /**
+     * @return Collection
+     */
+    public function getItems()
+    {
+        return $this->items;
+    }
 }
