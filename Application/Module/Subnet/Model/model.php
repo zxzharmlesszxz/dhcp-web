@@ -52,10 +52,4 @@ class Model extends \Core\Model
             return str_replace('%content%', $this->str(Subnet::find_all()), $template);
         }
     }
-
-    public function show(Subnet $subnet)
-    {
-        $template = file_get_contents(__DIR__ . '/../View/subnet_show.php');
-        return str_replace('%content%', $subnet->domain . $subnet->gateway, $template);
-    }
 }
