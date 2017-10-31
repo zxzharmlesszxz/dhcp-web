@@ -1,4 +1,5 @@
 <h1>Subnet</h1>
+%routes%
 <table id='table' class='display'>
     <thead>
     <tr>

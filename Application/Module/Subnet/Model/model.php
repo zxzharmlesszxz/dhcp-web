@@ -42,8 +42,11 @@ class Model extends \Core\Model
         if (isset($query['ajax']) and $query['ajax'] == true) {
             return $this->ajax(Subnet::find_all());
         } elseif (isset($query['id'])) {
+            $subnet = Subnet::find_by_id(intval($query['id']));
+            $data = $this->str($subnet);
+            $routes = SubnetRoute::find_by_scope(array('subnet_id' => $subnet->id));
             $template = file_get_contents(__DIR__ . '/../View/subnet_show.php');
-            $data = $this->str(Subnet::find_by_id(intval($query['id'])));
+            $template = str_replace('%routes%', $routes, $template);
         } else {
             $template = file_get_contents(__DIR__ . '/../View/subnets_view.php');
             $data = '';
