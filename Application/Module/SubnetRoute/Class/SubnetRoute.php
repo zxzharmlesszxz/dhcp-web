@@ -1,12 +1,12 @@
 <?php
 
-namespace Module\Subnet;
+namespace Module\SubnetRoute;
 
 use Core\Module\Database\DatabaseObject;
 
 /**
  * Class SubnetRoute
- * @package Module\Subnet
+ * @package Module\SubnetRoute
  */
 class SubnetRoute extends DatabaseObject
 {
