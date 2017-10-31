@@ -23,4 +23,4 @@ return [
   'password' => 'dhcp',
   'charset' => 'utf8',
   ),
-]
+];
