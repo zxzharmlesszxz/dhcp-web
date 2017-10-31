@@ -9,7 +9,12 @@
 namespace Module\Contact;
 
 
-class Contact
-{
+use Core\Module\Database\DatabaseObject;
 
+class Contact extends DatabaseObject
+{
+    public static function find_all()
+    {
+        return true;
+    }
 }
