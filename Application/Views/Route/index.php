@@ -9,9 +9,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="keywords" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
     <title>%title%</title>
 </head>
 <body>
@@ -54,7 +57,9 @@
 </div>
 <footer id="footer">
     <a href="https://github.com/zxzharmlesszxz/"></a>
-    - %copyright% &copy; 2015-%date% <a href="/admin/login">Admin Panel</a>
+    - %copyright% &copy; 2015-%date%
 </footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
 </body>
 </html>
