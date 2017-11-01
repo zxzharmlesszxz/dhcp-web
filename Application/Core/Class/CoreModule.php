@@ -29,7 +29,7 @@ abstract class CoreModule implements CoreModuleInterface
     {
         $controller = get_called_class() . '\Controller';
         $model = get_called_class() . '\Model';
-        $this->Controller = new $controller(new $model);
+        $this->Controller = new $controller(new $model($this));
     }
 
 }
