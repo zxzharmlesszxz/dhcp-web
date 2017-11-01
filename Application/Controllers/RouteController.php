@@ -15,7 +15,7 @@ class RouteController
         echo "Routes list";
         $items = Route::getItems();
         $page = file_get_contents(__DIR__ . "/../Views/Route/index.php");
-        $page = str_replace('%content%', implode('<br>', $items), $page);
+        $page = str_replace('%content%', json_encode($items), $page);
         print $page;
         return true;
     }
