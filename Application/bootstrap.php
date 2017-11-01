@@ -7,3 +7,14 @@
  */
 
 print_r(__FILE__);
+
+
+$config = include_once "Config/config.php";
+
+print_r($config);
+
+require_once "Router/Router.php";
+
+$router = new Router();
+
+$router->run();
