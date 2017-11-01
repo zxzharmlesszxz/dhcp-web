@@ -12,8 +12,7 @@ class PageController
 {
     public function actionIndex()
     {
-        header('Content-type: text/html');
-        $template = file_get_contents(__DIR__ . "/../Views/index.php");
+        $item = new Page();
         print $template;
         return true;
     }
