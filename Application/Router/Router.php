@@ -40,7 +40,7 @@ class Router
                 }
 
                 $controllerObject = new $controller;
-                $result = $controllerObject->$action();
+                $result = call_user_func(array($controllerObject, $action, $params));
 
                 print_r($params);
 
