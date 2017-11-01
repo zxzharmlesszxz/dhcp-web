@@ -15,6 +15,7 @@ class RouteController
         echo "Routes list";
         $items = Route::getItems();
         print_r($items);
+        require_once __DIR__ . "/../Views/Route/index.php";
         return true;
     }
 
