@@ -3,17 +3,17 @@
  * Created by PhpStorm.
  * User: harmless
  * Date: 01.11.17
- * Time: 14:14
+ * Time: 18:01
  */
 
-include_once __DIR__ . "/../Models/Route.php";
+include_once __DIR__ . "/../Models/Pool.php";
 
-class RouteController
+class PoolController
 {
     public function actionIndex()
     {
-        $items = Route::getItems();
-        $page = file_get_contents(__DIR__ . "/../Views/Route/index.php");
+        $items = Pool::getItems();
+        $page = file_get_contents(__DIR__ . "/../Views/Pool/index.php");
         $page = str_replace('%content%', json_encode($items), $page);
         print $page;
         return true;
@@ -21,8 +21,8 @@ class RouteController
 
     public function actionView($id)
     {
-        $item = Route::getItemById($id);
-        $page = file_get_contents(__DIR__ . "/../Views/Route/index.php");
+        $item = Pool::getItemById($id);
+        $page = file_get_contents(__DIR__ . "/../Views/Pool/index.php");
         $page = str_replace('%content%', json_encode($item), $page);
         print $page;
         return true;
