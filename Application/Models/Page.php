@@ -12,7 +12,7 @@ class Page
 
     public function __construct()
     {
-        $this->template = file_get_contents(__DIR__ . "/../Views/index.php");
+        $this->template = file_get_contents(__DIR__ . "/../Views/index.tpl");
     }
 
     public function render()
