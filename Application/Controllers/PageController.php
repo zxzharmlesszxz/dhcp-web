@@ -13,7 +13,7 @@ class PageController
     public function actionIndex()
     {
         $item = new Page();
-        print $template;
+        print $item->render();
         return true;
     }
 }

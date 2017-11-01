@@ -21,5 +21,6 @@ class Page
         $this->template = str_replace('%title%', $config['PROJECT_NAME'], $this->template);
         $this->template = str_replace('%copyright%', $config['PROJECT_NAME'], $this->template);
         $this->template = str_replace('%title%', date('Y'), $this->template);
+        return $this->template;
     }
 }
