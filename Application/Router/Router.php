@@ -31,8 +31,20 @@ class Router
                 list($controller, $action) = explode('/', $path);
                 $controller = ucfirst($controller) . 'Controller';
                 $action = 'action' . ucfirst($action);
-                echo $controller;
-                echo $action;
+                $controllerFile = __DIR__ . "/../Controllers/" . $controller . ".php";
+
+                if (file_exists($controllerFile))
+                {
+                    include_once $controllerFile;
+                }
+
+                $controllerObject = new $controller;
+                $result = $controllerObject->$action();
+
+                if ($result != null)
+                {
+                    break;
+                }
             }
         }
     }
