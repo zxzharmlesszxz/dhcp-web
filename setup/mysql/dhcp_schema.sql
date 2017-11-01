@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 30, 2017 at 03:07 PM
+-- Generation Time: Nov 01, 2017 at 11:22 AM
 -- Server version: 5.6.38
 -- PHP Version: 7.1.7
 
@@ -13,10 +13,10 @@ START TRANSACTION;
 SET time_zone = "+00:00";
 
 --
--- Database: `dhcp`
+-- Database: `dhcpd`
 --
-CREATE DATABASE IF NOT EXISTS `dhcp` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `dhcp`;
+CREATE DATABASE IF NOT EXISTS `dhcpd` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `dhcpd`;
 
 -- --------------------------------------------------------
 
@@ -24,12 +24,14 @@ USE `dhcp`;
 -- Table structure for table `clients`
 --
 
-CREATE TABLE `clients` (
-  `client_id` int(10) NOT NULL,
+DROP TABLE IF EXISTS `clients`;
+CREATE TABLE IF NOT EXISTS `clients` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
   `ip` text NOT NULL,
   `mac` text NOT NULL,
-  `subnet_id` int(4) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `subnet_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -37,7 +39,8 @@ CREATE TABLE `clients` (
 -- Table structure for table `dhcp_log`
 --
 
-CREATE TABLE `dhcp_log` (
+DROP TABLE IF EXISTS `dhcp_log`;
+CREATE TABLE IF NOT EXISTS `dhcp_log` (
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `client_mac` text NOT NULL,
   `client_ip` text NOT NULL,
@@ -52,7 +55,7 @@ CREATE TABLE `dhcp_log` (
   `dhcp_opt82_port_id` text NOT NULL,
   `dhcp_opt82_vlan_id` text NOT NULL,
   `dhcp_opt82_subscriber_id` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -60,12 +63,31 @@ CREATE TABLE `dhcp_log` (
 -- Table structure for table `ips`
 --
 
-CREATE TABLE `ips` (
+DROP TABLE IF EXISTS `ips`;
+CREATE TABLE IF NOT EXISTS `ips` (
   `ip` varchar(15) NOT NULL,
   `mac` varchar(17) DEFAULT NULL,
   `subnet_id` int(11) NOT NULL,
-  `lease_time` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `lease_time` int(11) DEFAULT NULL,
+  UNIQUE KEY `ip` (`ip`),
+  KEY `subnet_id` (`subnet_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `routes`
+--
+
+DROP TABLE IF EXISTS `routes`;
+CREATE TABLE IF NOT EXISTS `routes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `subnet_id` int(11) NOT NULL,
+  `destination` text NOT NULL,
+  `mask` text NOT NULL,
+  `gateway` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -73,8 +95,9 @@ CREATE TABLE `ips` (
 -- Table structure for table `subnets`
 --
 
-CREATE TABLE `subnets` (
-  `subnet_id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `subnets`;
+CREATE TABLE IF NOT EXISTS `subnets` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `dhcp_lease_time` int(32) NOT NULL,
   `dhcp_renewal` int(32) NOT NULL,
   `dhcp_rebind_time` int(32) NOT NULL,
@@ -84,70 +107,7 @@ CREATE TABLE `subnets` (
   `dns2` text NOT NULL,
   `domain` varchar(255) NOT NULL,
   `vlan_id` int(4) NOT NULL,
-  `type` varchar(32) NOT NULL DEFAULT 'guest'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `subnets_routes`
---
-
-CREATE TABLE `subnets_routes` (
-  `subnet_id` int(11) NOT NULL,
-  `destination` text NOT NULL,
-  `mask` text NOT NULL,
-  `gateway` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `clients`
---
-ALTER TABLE `clients`
-  ADD PRIMARY KEY (`client_id`);
-
---
--- Indexes for table `ips`
---
-ALTER TABLE `ips`
-  ADD UNIQUE KEY `ip` (`ip`),
-  ADD KEY `subnet_id` (`subnet_id`);
-
---
--- Indexes for table `subnets`
---
-ALTER TABLE `subnets`
-  ADD PRIMARY KEY (`subnet_id`);
-
---
--- Indexes for table `subnets_routes`
---
-ALTER TABLE `subnets_routes`
-  ADD PRIMARY KEY (`subnet_id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `clients`
---
-ALTER TABLE `clients`
-  MODIFY `client_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
-
---
--- AUTO_INCREMENT for table `subnets`
---
-ALTER TABLE `subnets`
-  MODIFY `subnet_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
-
---
--- AUTO_INCREMENT for table `subnets_routes`
---
-ALTER TABLE `subnets_routes`
-  MODIFY `subnet_id` int(11) NOT NULL AUTO_INCREMENT;
+  `type` varchar(32) NOT NULL DEFAULT 'guest',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 COMMIT;
