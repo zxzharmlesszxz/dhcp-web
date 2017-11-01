@@ -8,5 +8,8 @@
 
 class RouteController
 {
-
+    public function actionIndex()
+    {
+        return true;
+    }
 }

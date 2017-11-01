@@ -8,5 +8,8 @@
 
 class SubnetController
 {
-
+    public function actionIndex()
+    {
+        return true;
+    }
 }
