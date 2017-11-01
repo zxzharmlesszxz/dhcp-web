@@ -10,12 +10,16 @@ use Core\Interfaces\ModelInterface;
  */
 abstract class Model implements ModelInterface
 {
+    protected $module;
+
     /**
      * Model constructor.
+     * @param Module $module
      */
-    public function __construct()
+    public function __construct(Module $module)
     {
         //echo get_called_class() . __METHOD__ . '<br>';
+        $this->module = $module;
     }
 
     /**

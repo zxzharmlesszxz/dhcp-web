@@ -23,6 +23,8 @@ abstract class Module implements ModuleInterface
 
     protected $items;
 
+    protected $class;
+
     /**
      * Module constructor.
      */
@@ -30,10 +32,11 @@ abstract class Module implements ModuleInterface
     {
         $controller = get_called_class() . '\Controller';
         $model = get_called_class() . '\Model';
-        $this->Controller = new $controller(new $model);
+        $this->Controller = new $controller(new $model($this));
         $this->addRoute('get');
         $this->items = new Collection();
-        foreach ((get_called_class() . '\\' . explode('\\', get_called_class())[1])::find_all() as $item) {
+        $this->class = get_called_class() . '\\' . explode('\\', get_called_class())[1];
+        foreach (($this->class)::find_all() as $item) {
             $this->items->addItem($item);
         }
     }
