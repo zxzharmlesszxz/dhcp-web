@@ -14,7 +14,7 @@ class Model extends \Core\Model
      */
     protected function ajax(array $items)
     {
-        $content = array();
+        $content = ['data' => []];
         foreach ($items as $item) {
             $content['data'][] = array('id' => $item->id, 'subnet_id' => $item->subnet_id, 'gateway' => $item->gateway, 'mask' => $item->mask, 'destination' => $item->destination);
         }
