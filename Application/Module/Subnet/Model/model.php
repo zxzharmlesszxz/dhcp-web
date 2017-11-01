@@ -30,7 +30,7 @@ class Model extends \Core\Model
     public function get()
     {
         $query = func_get_arg(0)->getQuery();
-        if (isset($query)) {
+        if (!empty($query)) {
             $data = Subnet::find_by_scope($query);
         } else {
             $data = Subnet::find_all();
