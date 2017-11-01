@@ -27,6 +27,7 @@ class Model extends \Core\Model
     public function get()
     {
         $query = func_get_arg(0)->getQuery();
+        $class = get_called_class();
 
         if (!empty($query)) {
             $data = Route::find_by_scope($query);
