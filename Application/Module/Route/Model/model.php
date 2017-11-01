@@ -22,43 +22,18 @@ class Model extends \Core\Model
     }
 
     /**
-     * @param Route $route
-     * @return string
-     */
-    protected function str(Route $route)
-    {
-        return "<tr><td>$route->id</td><td>$route->subnet_id</td><td>$route->gateway</td><td>$route->destination</td><td>$route->mask</td></tr>\n";
-    }
-
-    /**
      * @return array|mixed|string
      */
     public function get()
     {
         $query = func_get_arg(0)->getQuery();
-        $method = array_shift($query);
-        if (isset($query['id'])) {
-            $data = Route::find_by_id(intval($query['id']));
-            $template = file_get_contents(__DIR__ . '/../View/route_show.php');
-        } elseif (isset($query)) {
+
+        if (isset($query)) {
             $data = Route::find_by_scope($query);
         } else {
-            $template = file_get_contents(__DIR__ . '/../View/routes_view.php');
             $data = Route::find_all();
         }
-        if ($method == true) {
-            return $this->ajax(!empty($data) ? $data : array() );
-        } else {
-            if (is_array($data)){
-                $str = '';
-                foreach ($data as $subnet) {
-                    $str .= $this->str($subnet);
-                }
-                $data = $str;
-            } else {
-                $data = $this->str($data);
-            }
-            return str_replace('%content%', $data, $template);
-        }
+
+        return $this->ajax(!empty($data) ? $data : array() );
     }
 }
