@@ -7,10 +7,11 @@
  */
 
 return [
-    'route/([a-z]+)/([0-9]+)' => 'route/$1/$2',
-    'subnet/([a-z]+)/([0-9]+)' => 'subnet/$1/$2',
-    'pool/([a-z]+)/([0-9]+)' => 'pool/$1/$2',
-    'subnets' => 'subnet/index',
-    'routes' => 'route/index',
-    'pools' => 'pool/index'
+    '/route/([a-z]+)/([0-9]+)' => 'route/$1/$2',
+    '/subnet/([a-z]+)/([0-9]+)' => 'subnet/$1/$2',
+    '/pool/([a-z]+)/([0-9]+)' => 'pool/$1/$2',
+    '/subnets' => 'subnet/index',
+    '/routes' => 'route/index',
+    '/pools' => 'pool/index',
+    '/' => 'page/index'
 ];
