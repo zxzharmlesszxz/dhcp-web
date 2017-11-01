@@ -17,7 +17,7 @@ class Router
 
     public function run()
     {
-        $uri = trim($_SERVER['REQUEST_URI']);
+        $uri = trim($_SERVER['REQUEST_URI'], '/');
         echo $uri;
     }
 }
