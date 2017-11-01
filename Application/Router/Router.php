@@ -24,5 +24,9 @@ class Router
     {
         $uri = $this->getURI();
         echo $uri;
+        foreach ($this->routes as $uriPattern => $path)
+        {
+            echo "<br>$uriPattern = $path";
+        }
     }
 }
