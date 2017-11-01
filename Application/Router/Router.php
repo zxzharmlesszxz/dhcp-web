@@ -27,6 +27,10 @@ class Router
         foreach ($this->routes as $uriPattern => $path)
         {
             echo "<br>$uriPattern = $path";
+            if (preg_match("~$uriPattern", $uri))
+            {
+                echo "+";
+            }
         }
     }
 }
