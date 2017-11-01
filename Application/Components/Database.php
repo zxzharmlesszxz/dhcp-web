@@ -12,7 +12,7 @@ class Database
     {
         $params = include_once __DIR__ . "/../Config/db_params.php";
         $type = array_keys($params)[0];
-        print_r($params[$type]['dababase']);
+        print_r($params[$type]);
         $db = new PDO(
             "{$type}:host={$params[$type]['host']};dbname={$params[$type]['dababase']};charset={$params[$type]['charset']}",
             $params[$type]['user'], $params[$type]['password']
