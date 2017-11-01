@@ -12,7 +12,6 @@ class SubnetController
 {
     public function actionIndex()
     {
-        echo "Subnets list";
         $items = Subnet::getItems();
         $page = file_get_contents(__DIR__ . "/../Views/Route/index.php");
         $page = str_replace('%content%', json_encode($items), $page);
@@ -22,7 +21,6 @@ class SubnetController
 
     public function actionView($id)
     {
-        echo "Subnet view id = $id";
         $item = Subnet::getItemById($id);
         $page = file_get_contents(__DIR__ . "/../Views/Route/index.php");
         $page = str_replace('%content%', json_encode($item), $page);

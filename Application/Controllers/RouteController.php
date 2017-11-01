@@ -12,7 +12,6 @@ class RouteController
 {
     public function actionIndex()
     {
-        echo "Routes list";
         $items = Route::getItems();
         $page = file_get_contents(__DIR__ . "/../Views/Route/index.php");
         $page = str_replace('%content%', json_encode($items), $page);
@@ -22,7 +21,6 @@ class RouteController
 
     public function actionView($id)
     {
-        echo "Route view id = $id";
         $item = Route::getItemById($id);
         $page = file_get_contents(__DIR__ . "/../Views/Route/index.php");
         $page = str_replace('%content%', json_encode($item), $page);
