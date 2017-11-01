@@ -26,7 +26,7 @@ USE `dhcpd`;
 
 DROP TABLE IF EXISTS `clients`;
 CREATE TABLE IF NOT EXISTS `clients` (
-  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `ip` text NOT NULL,
   `mac` text NOT NULL,
   `subnet_id` int(11) NOT NULL,
@@ -63,12 +63,14 @@ CREATE TABLE IF NOT EXISTS `dhcp_log` (
 -- Table structure for table `ips`
 --
 
-DROP TABLE IF EXISTS `ips`;
-CREATE TABLE IF NOT EXISTS `ips` (
+DROP TABLE IF EXISTS `pools`;
+CREATE TABLE IF NOT EXISTS `pools` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `ip` varchar(15) NOT NULL,
   `mac` varchar(17) DEFAULT NULL,
   `subnet_id` int(11) NOT NULL,
   `lease_time` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
   UNIQUE KEY `ip` (`ip`),
   KEY `subnet_id` (`subnet_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
