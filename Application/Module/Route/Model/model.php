@@ -36,18 +36,18 @@ class Model extends \Core\Model
     public function get()
     {
         $query = func_get_arg(0)->getQuery();
+        $method = array_shift($query);
         print_r($query);
         if (isset($query['id'])) {
             $data = Route::find_by_id(intval($query['id']));
             $template = file_get_contents(__DIR__ . '/../View/route_show.php');
         } elseif (isset($query)) {
-            array_shift($query);
             $data = Route::find_by_scope($query);
         } else {
             $template = file_get_contents(__DIR__ . '/../View/routes_view.php');
             $data = Route::find_all();
         }
-        if (isset($query['ajax']) and $query['ajax'] == true) {
+        if ($method == true) {
             return $this->ajax($data);
         } else {
             if (is_array($data)){
