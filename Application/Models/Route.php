@@ -10,16 +10,14 @@ class Route
 {
     public static function getItemById($id)
     {
-        $db = new PDO("mysql:host=localhost;dbname=dhcpd", "dhcpd", "dhcpd");
-        $result = $db->query("SELECT * FROM `routes` WHERE `id` = '$id';");
+        $result = Database::getConnection()->query("SELECT * FROM `routes` WHERE `id` = '$id';");
         $result->setFetchMode(PDO::FETCH_ASSOC);
         return $result->fetch();
     }
 
     public static function getItems()
     {
-        $db = new PDO("mysql:host=localhost;dbname=dhcpd", "dhcpd", "dhcpd");
-        $result = $db->query("SELECT * FROM `routes`;");
+        $result = Database::getConnection()->query("SELECT * FROM `routes`;");
         $result->setFetchMode(PDO::FETCH_ASSOC);
         return $result->fetchAll();
     }

@@ -9,6 +9,7 @@
 $config = include_once "Config/config.php";
 
 require_once "Router/Router.php";
+require_once "Components/Database.php";
 
 $router = new Router();
 

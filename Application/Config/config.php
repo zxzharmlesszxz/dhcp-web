@@ -18,12 +18,4 @@ return ['PROJECT_NAME' => 'DHCP web',
     'THEME_PATH' => 'Application/Theme',
 
     'THEME' => 'Example',
-
-    'mysql' => array(
-        'host' => 'localhost',
-        'database' => 'dhcpd',
-        'user' => 'dhcpd',
-        'password' => 'dhcpd',
-        'charset' => 'utf8',
-    ),
 ];
