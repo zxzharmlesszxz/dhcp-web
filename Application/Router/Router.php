@@ -30,7 +30,9 @@ class Router
             {
                 list($controller, $action) = explode('/', $path);
                 $controller = ucfirst($controller) . 'Controller';
+                $action = 'action' . ucfirst($action);
                 echo $controller;
+                echo $action;
             }
         }
     }
