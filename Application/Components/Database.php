@@ -11,8 +11,7 @@ class Database
     public static function getConnection()
     {
         $params = include_once __DIR__ . "/../Config/db_params.php";
-        $type = array_keys($params);
-        print_r($type);
+        $type = array_keys($params)[0];
         $db = new PDO("$type:host=$params[$type]['host'];dbname=$params[$type]['dababase'];charset=$params[$type]['charset']",
             $params[$type]['user'], $params[$type]['password']);
         return $db;
