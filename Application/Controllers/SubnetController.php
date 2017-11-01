@@ -14,9 +14,9 @@ class SubnetController
         return true;
     }
 
-    public function actionView()
+    public function actionView($id)
     {
-        echo "Subnet view";
+        echo "Subnet view id = $id";
         return true;
     }
 }

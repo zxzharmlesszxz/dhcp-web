@@ -28,9 +28,10 @@ class Router
         {
             if (preg_match("~$uriPattern~", $uri))
             {
-                list($controller, $action) = explode('/', $path);
-                $controller = ucfirst($controller) . 'Controller';
-                $action = 'action' . ucfirst($action);
+                $segments = explode('/', $path);
+                $controller = ucfirst(array_shift($segments)) . 'Controller';
+                $action = 'action' . ucfirst(array_shift($segments));
+                $params = $segments;
                 $controllerFile = __DIR__ . "/../Controllers/" . $controller . ".php";
 
                 if (file_exists($controllerFile))
@@ -40,6 +41,8 @@ class Router
 
                 $controllerObject = new $controller;
                 $result = $controllerObject->$action();
+
+                print_r($params);
 
                 if ($result != null)
                 {

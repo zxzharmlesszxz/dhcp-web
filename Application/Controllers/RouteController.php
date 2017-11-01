@@ -14,9 +14,9 @@ class RouteController
         return true;
     }
 
-    public function actionView()
+    public function actionView($id)
     {
-        echo "Route view";
+        echo "Route view id = $id";
         return true;
     }
 }
