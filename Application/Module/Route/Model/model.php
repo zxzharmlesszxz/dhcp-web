@@ -47,7 +47,7 @@ class Model extends \Core\Model
             $data = Route::find_all();
         }
         if ($method == true) {
-            return $this->ajax($data);
+            return $this->ajax(!empty($data) ? $data : array() );
         } else {
             if (is_array($data)){
                 $str = '';
