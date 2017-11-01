@@ -12,6 +12,7 @@ class Route
     {
         $db = new PDO("mysql:host=localhost;dbname=dhcpd", "dhcpd", "dhcpd");
         $result = $db->query("SELECT * FROM `routes` WHERE `id` = '$id';");
+        $result->setFetchMode(PDO::FETCH_ASSOC);
         return $result->fetch();
     }
 
