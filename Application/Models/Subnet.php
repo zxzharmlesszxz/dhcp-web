@@ -18,7 +18,7 @@ class Subnet
     public static function getItems()
     {
         $db = new PDO("mysql:host=localhost;dbname=dhcpd", "dhcpd", "dhcpd");
-        $result = $db->query("SELECT * FROM `subnets`;");
+        $result = $db->query("SELECT * FROM `subnets`;")->setFetchMode(PDO::FETCH_ASSOC);
         return $result->fetchAll();
     }
 }
