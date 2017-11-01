@@ -6,8 +6,6 @@
  * Time: 11:25
  */
 
-print_r(__FILE__);
-
 return ['PROJECT_NAME' => 'DHCP web',
     'PROJECT_VERSION' => '0.0.1',
     'PROJECT_ROOT' => dirname(__DIR__, 2),
