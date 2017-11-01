@@ -13,6 +13,7 @@ class PoolController
     public function actionIndex()
     {
         $items = Pool::getItems();
+        header('Content-type: application/json');
         print json_encode($items);
         return true;
     }
@@ -20,6 +21,7 @@ class PoolController
     public function actionView($id)
     {
         $item = Pool::getItemById($id);
+        header('Content-type: application/json');
         print json_encode($item);
         return true;
     }

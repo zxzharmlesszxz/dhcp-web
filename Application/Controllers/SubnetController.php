@@ -13,6 +13,7 @@ class SubnetController
     public function actionIndex()
     {
         $items = Subnet::getItems();
+        header('Content-type: application/json');
         print json_encode($items);
         return true;
     }
@@ -20,6 +21,7 @@ class SubnetController
     public function actionView($id)
     {
         $item = Subnet::getItemById($id);
+        header('Content-type: application/json');
         print json_encode($item);
         return true;
     }
