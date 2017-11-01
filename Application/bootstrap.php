@@ -6,12 +6,7 @@
  * Time: 11:24
  */
 
-print_r(__FILE__ . "\n");
-
-
 $config = include_once "Config/config.php";
-
-print_r($config);
 
 require_once "Router/Router.php";
 
