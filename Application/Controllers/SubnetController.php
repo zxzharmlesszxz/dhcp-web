@@ -10,6 +10,13 @@ class SubnetController
 {
     public function actionIndex()
     {
+        echo "Subnets list";
+        return true;
+    }
+
+    public function actionView()
+    {
+        echo "Subnet view";
         return true;
     }
 }
