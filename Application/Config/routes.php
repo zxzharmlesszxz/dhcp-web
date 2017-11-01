@@ -7,8 +7,8 @@
  */
 
 return [
-    'route/([0-9]+)' => 'route/view/$1',
-    'subnet/([0-9]+)' => 'subnet/view/$1',
+    'route/([a-z]+)/([0-9]+)' => 'route/$1/$2',
+    'subnet/([a-z]+)/([0-9]+)' => 'subnet/$1/$2',
     'subnets' => 'subnet/index',
     'routes' => 'route/index'
 ];
