@@ -14,8 +14,9 @@ class RouteController
     {
         echo "Routes list";
         $items = Route::getItems();
-        print_r($items);
-        require_once __DIR__ . "/../Views/Route/index.php";
+        $page = file_get_contents(__DIR__ . "/../Views/Route/index.php");
+        $page = str_replace('%content%', implode('<br>', $items), $page);
+        print $page;
         return true;
     }
 
