@@ -36,6 +36,6 @@ class Model extends \Core\Model
             $data = Subnet::find_all();
         }
 
-        return $this->ajax($data);
+        return $this->ajax(!empty($data) ? $data : array() );
     }
 }
