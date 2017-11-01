@@ -13,18 +13,14 @@ class PoolController
     public function actionIndex()
     {
         $items = Pool::getItems();
-        $page = file_get_contents(__DIR__ . "/../Views/Pool/index.php");
-        $page = str_replace('%content%', json_encode($items), $page);
-        print $page;
+        print json_encode($items);
         return true;
     }
 
     public function actionView($id)
     {
         $item = Pool::getItemById($id);
-        $page = file_get_contents(__DIR__ . "/../Views/Pool/index.php");
-        $page = str_replace('%content%', json_encode($item), $page);
-        print $page;
+        print json_encode($item);
         return true;
     }
 }

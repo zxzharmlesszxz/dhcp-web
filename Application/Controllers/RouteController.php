@@ -13,18 +13,14 @@ class RouteController
     public function actionIndex()
     {
         $items = Route::getItems();
-        $page = file_get_contents(__DIR__ . "/../Views/Route/index.php");
-        $page = str_replace('%content%', json_encode($items), $page);
-        print $page;
+        print json_encode($items);
         return true;
     }
 
     public function actionView($id)
     {
         $item = Route::getItemById($id);
-        $page = file_get_contents(__DIR__ . "/../Views/Route/index.php");
-        $page = str_replace('%content%', json_encode($item), $page);
-        print $page;
+        print json_encode($item);
         return true;
     }
 }

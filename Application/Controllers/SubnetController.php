@@ -13,18 +13,14 @@ class SubnetController
     public function actionIndex()
     {
         $items = Subnet::getItems();
-        $page = file_get_contents(__DIR__ . "/../Views/Route/index.php");
-        $page = str_replace('%content%', json_encode($items), $page);
-        print $page;
+        print json_encode($items);
         return true;
     }
 
     public function actionView($id)
     {
         $item = Subnet::getItemById($id);
-        $page = file_get_contents(__DIR__ . "/../Views/Route/index.php");
-        $page = str_replace('%content%', json_encode($item), $page);
-        print $page;
+        print json_encode($item);
         return true;
     }
 }
