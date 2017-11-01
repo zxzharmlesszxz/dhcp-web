@@ -3,6 +3,7 @@
 namespace Core\Module\Database;
 
 use Core\Core;
+use Core\Module;
 
 /**
  * Class Model
@@ -17,10 +18,11 @@ class Model extends \Core\Model
 
     /**
      * Model constructor.
+     * @param Module $module
      */
-    public function __construct()
+    public function __construct(Module $module)
     {
-        parent::__construct();
+        parent::__construct($module);
         $this->class = new MySQL_Database(Core::getInstance()->Config->mysql);
     }
 }
