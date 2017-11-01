@@ -28,7 +28,9 @@ class Router
         {
             if (preg_match("~$uriPattern~", $uri))
             {
-                echo "+";
+                list($controller, $action) = explode('/', $path);
+                $controller = ucfirst($controller);
+                echo $controller;
             }
         }
     }
