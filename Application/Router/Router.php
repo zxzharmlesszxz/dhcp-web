@@ -15,9 +15,14 @@ class Router
         $this->routes = include_once __DIR__ . "/../Config/routes.php";
     }
 
+    private function getURI()
+    {
+        return trim($_SERVER['REQUEST_URI'], '/');
+    }
+
     public function run()
     {
-        $uri = trim($_SERVER['REQUEST_URI'], '/');
+        $uri = $this->getURI();
         echo $uri;
     }
 }
