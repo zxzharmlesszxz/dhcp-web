@@ -39,24 +39,9 @@
         </div>
         <br class="clearfix">
     </div>
-    <div id="page-bottom">
-        <div id="page-bottom-sidebar">
-            <h3>Contacts</h3>
-            <ul class="list">
-                <li class="last">email: zxzharmlesszxz@gmail.com</li>
-            </ul>
-        </div>
-        <div id="page-bottom-content">
-            <h3>About</h3>
-            <p>
-                Empty yet
-            </p>
-        </div>
-        <br class="clearfix">
-    </div>
 </div>
 <footer id="footer">
-    <a href="https://github.com/zxzharmlesszxz/"></a>
+    <a href="https://github.com/zxzharmlesszxz/">zxzharmlesszxz</a>
     - %copyright% &copy; 2015-%date%
 </footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
