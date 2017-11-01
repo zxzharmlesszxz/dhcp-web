@@ -24,7 +24,9 @@ class RouteController
     {
         echo "Route view id = $id";
         $item = Route::getItemById($id);
-        print_r($item);
+        $page = file_get_contents(__DIR__ . "/../Views/Route/index.php");
+        $page = str_replace('%content%', json_encode($item), $page);
+        print $page;
         return true;
     }
 }

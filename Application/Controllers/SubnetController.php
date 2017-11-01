@@ -14,7 +14,9 @@ class SubnetController
     {
         echo "Subnets list";
         $items = Subnet::getItems();
-        print_r($items);
+        $page = file_get_contents(__DIR__ . "/../Views/Route/index.php");
+        $page = str_replace('%content%', json_encode($items), $page);
+        print $page;
         return true;
     }
 
@@ -22,7 +24,9 @@ class SubnetController
     {
         echo "Subnet view id = $id";
         $item = Subnet::getItemById($id);
-        print_r($item);
+        $page = file_get_contents(__DIR__ . "/../Views/Route/index.php");
+        $page = str_replace('%content%', json_encode($item), $page);
+        print $page;
         return true;
     }
 }
