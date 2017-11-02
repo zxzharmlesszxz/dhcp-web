@@ -21,6 +21,15 @@ class Page
         $this->template = str_replace('%title%', $config['PROJECT_NAME'], $this->template);
         $this->template = str_replace('%copyright%', $config['PROJECT_NAME'], $this->template);
         $this->template = str_replace('%date%', date('Y'), $this->template);
+        $this->template = str_replace('%menu%', "<nav id=\"menu\">\n
+        <menu>\n
+            <li class=\"active\"><a href=\"/\" title=\"Main\">Main</a></li>\n
+            <li><a href=\"/subnets\" title=\"Subnets\">Servers</a></li>\n
+            <li><a href=\"/routes\" title=\"Routes\">Contacts</a></li>\n
+            <li><a href=\"/pools\" title=\"Pools\">Login</a></li>\n
+        </menu>\n
+        <br class=\"clearfix\">\n
+    </nav>\n", $this->template);
         return $this->template;
     }
 }
