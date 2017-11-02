@@ -47,30 +47,6 @@
 <script type="text/javascript" src="/js/jquery.min.js"></script>
 <script type="text/javascript" src="/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/js/jquery.dataTables.min.js"></script>
-<script type='text/javascript'>
-    $(document).ready(function(){
-        $("#table").slideUp();
-        $("#search_button").click(function(e){
-            e.preventDefault();
-            ajax_search();
-        });
-        $("#search_term").keyup(function(e){
-            e.preventDefault();
-            ajax_search();
-        });
-
-    });
-    function ajax_search(){
-        $("#table").show();
-        var search_val=$("#search_term").val();
-        $.post("./find.php", {search_term : search_val}, function(data){
-            if (data.length>0){
-                $("#table").html(data);
-            }
-        })
-    }
-</script>
-
 <script type="text/javascript">
     $(document).ready(function () {
         alert("fack");
