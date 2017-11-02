@@ -9,6 +9,9 @@
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/css/jquery.dataTables.min.css">
     <title>%title%</title>
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.dataTables.min.js"></script>
 </head>
 <body>
 <script type="text/javascript">
@@ -55,8 +58,5 @@
     <a href="https://github.com/zxzharmlesszxz/">zxzharmlesszxz</a>
     - %copyright% &copy; 2015-%date%
 </footer>
-<script type="text/javascript" src="/js/jquery.min.js"></script>
-<script type="text/javascript" src="/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/js/jquery.dataTables.min.js"></script>
 </body>
 </html>
