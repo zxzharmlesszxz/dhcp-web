@@ -49,7 +49,7 @@
 <script type="text/javascript" src="/js/jquery.dataTables.min.js"></script>
 <script type='text/javascript'>
     $(document).ready(function(){
-        $("#search_results").slideUp();
+        $("#table").slideUp();
         $("#search_button").click(function(e){
             e.preventDefault();
             ajax_search();
@@ -61,14 +61,20 @@
 
     });
     function ajax_search(){
-        $("#search_results").show();
+        $("#table").show();
         var search_val=$("#search_term").val();
         $.post("./find.php", {search_term : search_val}, function(data){
             if (data.length>0){
-                $("#search_results").html(data);
+                $("#table").html(data);
             }
         })
     }
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#table').DataTable();
+    });
 </script>
 </body>
 </html>
