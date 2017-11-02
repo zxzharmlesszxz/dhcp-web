@@ -73,6 +73,7 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
+        alert("fack");
         $('#table').DataTable({
             "processing": true,
             "ajax": {
