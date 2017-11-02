@@ -14,7 +14,9 @@ class SubnetController
     {
         $items = Subnet::getItems();
         header('Content-type: application/json');
+        print '{"data": ';
         print json_encode($items);
+        print '}';
         return true;
     }
 
