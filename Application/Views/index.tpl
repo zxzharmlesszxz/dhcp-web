@@ -74,7 +74,10 @@
 <script type="text/javascript">
     $(document).ready(function () {
         $('#table').DataTable({
-            "ajax": "/subnets"
+            "processing": true,
+            "ajax": {
+                "url": "/subnets"
+            }
         });
     });
 </script>
