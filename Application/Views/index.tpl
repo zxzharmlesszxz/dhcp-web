@@ -20,7 +20,15 @@
         $('#table').DataTable({
             "processing": true,
             "ajax": {
-                "url": "/subnets"
+                "url": "/subnets",
+                "dataSrc": function (json) {
+                    var return_data = [];
+                    for (var i = 0; i < json.length; i++) {
+                        var item = json.[i];
+                        return_data.push(item)
+                    }
+                    return return_data;
+                }
             }
         });
     });
