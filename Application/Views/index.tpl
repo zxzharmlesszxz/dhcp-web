@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/jquery.dataTables.min.css">
     <title>%title%</title>
 </head>
 <body>
@@ -43,7 +44,31 @@
     <a href="https://github.com/zxzharmlesszxz/">zxzharmlesszxz</a>
     - %copyright% &copy; 2015-%date%
 </footer>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/jquery.dataTables.min.js"></script>
+<script type='text/javascript'>
+    $(document).ready(function(){
+        $("#search_results").slideUp();
+        $("#search_button").click(function(e){
+            e.preventDefault();
+            ajax_search();
+        });
+        $("#search_term").keyup(function(e){
+            e.preventDefault();
+            ajax_search();
+        });
+
+    });
+    function ajax_search(){
+        $("#search_results").show();
+        var search_val=$("#search_term").val();
+        $.post("./find.php", {search_term : search_val}, function(data){
+            if (data.length>0){
+                $("#search_results").html(data);
+            }
+        })
+    }
+</script>
 </body>
 </html>
