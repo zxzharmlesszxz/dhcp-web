@@ -24,9 +24,9 @@ class Page
         $this->template = str_replace('%menu%', "<nav id=\"menu\">\n
         <menu>\n
             <li class=\"active\"><a href=\"/\" title=\"Main\">Main</a></li>\n
-            <li><a href=\"/subnets\" title=\"Subnets\">Subnets</a></li>\n
-            <li><a href=\"/routes\" title=\"Routes\">Routes</a></li>\n
-            <li><a href=\"/pools\" title=\"Pools\">Pools</a></li>\n
+            <li><button title=\"Subnets\">Subnets</button></li>\n
+            <li><button title=\"Routes\">Routes</button></li>\n
+            <li><button title=\"Pools\">Pools</button></li>\n
         </menu>\n
         <br class=\"clearfix\">\n
     </nav>\n", $this->template);

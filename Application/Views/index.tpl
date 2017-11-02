@@ -25,7 +25,14 @@
     <div id="page">
         <div id="content">
             <div class="box">
-                %content%
+                <table id='table' class='display'>
+                    <thead>
+                    </thead>
+                    <tfoot>
+                    </tfoot>
+                    <tbody>
+                    </tbody>
+                </table>
             </div>
             <br class="clearfix">
         </div>
