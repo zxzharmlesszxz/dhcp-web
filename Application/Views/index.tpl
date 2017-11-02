@@ -42,8 +42,34 @@
             <div class="box">
                 <table id='table' class='display'>
                     <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>dhcp_lease_time</th>
+                        <th>dhcp_renewal</th>
+                        <th>dhcp_rebind_time</th>
+                        <th>mask</th>
+                        <th>gateway</th>
+                        <th>dns1</th>
+                        <th>dns2</th>
+                        <th>domain</th>
+                        <th>vlan_id</th>
+                        <th>type</th>
+                    </tr>
                     </thead>
                     <tfoot>
+                    <tr>
+                        <th>id</th>
+                        <th>dhcp_lease_time</th>
+                        <th>dhcp_renewal</th>
+                        <th>dhcp_rebind_time</th>
+                        <th>mask</th>
+                        <th>gateway</th>
+                        <th>dns1</th>
+                        <th>dns2</th>
+                        <th>domain</th>
+                        <th>vlan_id</th>
+                        <th>type</th>
+                    </tr>
                     </tfoot>
                     <tbody>
                     </tbody>
