@@ -28,7 +28,7 @@ class Router
         {
             if (preg_match("~$uriPattern~", $uri))
             {
-                $internalPath = preg_replace("~$uriPattern~", $path, $uri);
+                $internalPath = preg_replace("~$uriPattern~", $path, explode("?", $uri)[0]);
                 $segments = explode('/', $internalPath);
                 $controller = ucfirst(array_shift($segments)) . 'Controller';
                 $action = 'action' . ucfirst(array_shift($segments));
