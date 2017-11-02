@@ -11,6 +11,17 @@
     <title>%title%</title>
 </head>
 <body>
+<script type="text/javascript">
+    $(document).ready(function () {
+        alert("fack");
+        $('#table').DataTable({
+            "processing": true,
+            "ajax": {
+                "url": "/subnets"
+            }
+        });
+    });
+</script>
 <header id="header">
     <div id="logo">
         <a href="/">%title%</a>
@@ -47,16 +58,5 @@
 <script type="text/javascript" src="/js/jquery.min.js"></script>
 <script type="text/javascript" src="/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript">
-    $(document).ready(function () {
-        alert("fack");
-        $('#table').DataTable({
-            "processing": true,
-            "ajax": {
-                "url": "/subnets"
-            }
-        });
-    });
-</script>
 </body>
 </html>
